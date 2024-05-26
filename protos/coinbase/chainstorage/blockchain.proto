@@ -13,6 +13,7 @@ import "coinbase/chainstorage/blockchain_aptos.proto";
 import "coinbase/chainstorage/blockchain_solana.proto";
 import "coinbase/chainstorage/blockchain_rosetta.proto";
 import "coinbase/chainstorage/blockchain_ethereum.proto";
+import "coinbase/chainstorage/blockchain_xrp.proto";
 
 message Block {
   coinbase.c3.common.Blockchain blockchain = 1;
@@ -26,6 +27,7 @@ message Block {
     RosettaBlobdata rosetta = 102;
     SolanaBlobdata solana = 103;
     AptosBlobdata aptos = 104;
+    XRPBlobdata xrp = 105;
   }
 }
 
@@ -91,6 +93,7 @@ message NativeBlock {
     SolanaBlock solana = 103;
     AptosBlock aptos = 104;
     SolanaBlockV2 solana_v2 = 105;
+    XRPBlock xrp = 106;
   }
 }
 
@@ -109,6 +112,7 @@ message NativeTransaction {
     coinbase.crypto.rosetta.types.Transaction rosetta = 102;
     SolanaTransaction solana = 103;
     AptosTransaction aptos = 104;
+    XRPTransaction xrp = 105;
   }
 }
 
