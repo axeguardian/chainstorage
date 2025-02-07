@@ -70,6 +70,7 @@ type (
 		EthereumBeacon ClientFactory `name:"ethereum/beacon" optional:"true"`
 		CosmosStaking  ClientFactory `name:"cosmos/staking" optional:"true"`
 		CardanoStaking ClientFactory `name:"cardano/staking" optional:"true"`
+		Story          ClientFactory `name:"story" optional:"true"`
 	}
 
 	ClientParams struct {
@@ -133,6 +134,8 @@ func NewClient(params Params) (Result, error) {
 			factory = params.Base
 		case common.Blockchain_BLOCKCHAIN_APTOS:
 			factory = params.Aptos
+		case common.Blockchain_BLOCKCHAIN_STORY:
+			factory = params.Story
 		default:
 			if params.Config.IsRosetta() {
 				factory = params.Rosetta

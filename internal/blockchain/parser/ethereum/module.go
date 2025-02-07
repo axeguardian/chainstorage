@@ -35,4 +35,7 @@ var Module = fx.Options(
 		Build(),
 	internal.NewParserBuilder("fantom", NewFantomNativeParser).
 		Build(),
+	internal.NewParserBuilder("story", NewStoryNativeParser).
+		SetValidatorFactory(NewStoryValidator).
+		Build(),
 )
